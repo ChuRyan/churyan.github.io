@@ -82,5 +82,9 @@ Scene_Title.prototype.start = function()
         SceneManager.goto(Scene_Map);
     }
 };
+   if ( document.referrer.localeCompare("https://churyan.github.io/about/") == 0 )
+       {
+         $gamePlayer.reserveTransfer(1, 30, 14, 2, 2);
+       }
 }
 })();
