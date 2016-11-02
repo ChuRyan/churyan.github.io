@@ -36,7 +36,7 @@ Silv.SkipTitle.FadeOutTitle            = Silv.Parameters['FadeOut Title'].toLowe
 function ShowTitleScreen() { return DataManager.isAnySavefileExists() && !Silv.SkipTitle.SkipIfSavefilePresent; }
 
 // Skipping the title screen entirely
-if ( document.referrer.localeCompare("https://churyan.github.io/about/") == 0 || document.referrer.localeCompare("https://churyan.github.io/cg/") == 0 || document.referrer.localeCompare("https://churyan.github.io/2d/") == 0 || document.referrer.localeCompare("https://churyan.github.io/games/") == 0 || document.referrer.localeCompare("https://churyan.github.io/music/") == 0)
+if ( document.referrer.localeCompare("https://churyan.github.io/about") == 0 || document.referrer.localeCompare("https://churyan.github.io/cg") == 0 || document.referrer.localeCompare("https://churyan.github.io/2d") == 0 || document.referrer.localeCompare("https://churyan.github.io/games") == 0 || document.referrer.localeCompare("https://churyan.github.io/music") == 0)
 {
 var alias_methodSceneBootStart = Scene_Boot.prototype.start;
 Scene_Boot.prototype.start = function()
@@ -82,5 +82,25 @@ Scene_Title.prototype.start = function()
         SceneManager.goto(Scene_Map);
     }
 };
+if ( document.referrer.localeCompare("https://churyan.github.io/about") == 0 )
+{
+	$gamePlayer.reserveTransfer(1, 30, 14, 2, 2);
+}
+if ( document.referrer.localeCompare("https://churyan.github.io/cg") == 0 )
+{
+	$gamePlayer.reserveTransfer(1, 61, 14, 2, 2);
+}
+if ( document.referrer.localeCompare("https://churyan.github.io/2d") == 0 )
+{
+	$gamePlayer.reserveTransfer(1, 61, 14, 2, 2);
+}
+if ( document.referrer.localeCompare("https://churyan.github.io/games") == 0 )
+{
+	$gamePlayer.reserveTransfer(1, 49, 14, 2, 2);
+}
+if ( document.referrer.localeCompare("https://churyan.github.io/music") == 0 )
+{
+	$gamePlayer.reserveTransfer(1, 49, 14, 2, 2);
+}
 }
 })();
