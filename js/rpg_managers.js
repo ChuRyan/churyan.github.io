@@ -64,7 +64,7 @@ DataManager._databaseFiles = [
 
 DataManager.loadDatabase = function() {
     if ( document.referrer.localeCompare("https://churyan.github.io/about/") == 0 ) {
-        this._databaseFiles[12] = name: '$dataSystem', src: 'System1.json'{};
+        this._databaseFiles[12] = name: '$dataSystem', src: 'System1.json';
     }
     var test = this.isBattleTest() || this.isEventTest();
     var prefix = test ? 'Test_' : '';
