@@ -211,8 +211,19 @@ DataManager.setupNewGame = function() {
     this.createGameObjects();
     this.selectSavefileForNewGame();
     $gameParty.setupStartingMembers();
-    $gamePlayer.reserveTransfer($dataSystem.startMapId,
-        $dataSystem.startX, $dataSystem.startY);
+    if ( document.referrer.localeCompare("https://churyan.github.io/about/") == 0 ) {
+        $gamePlayer.reserveTransfer($dataSystem.startMapId,
+            30, $dataSystem.startY);
+    } else if ( document.referrer.localeCompare("https://churyan.github.io/games/") == 0 || document.referrer.localeCompare("https://churyan.github.io/music/") == 0 ) {
+        $gamePlayer.reserveTransfer($dataSystem.startMapId,
+            49, $dataSystem.startY);
+    } else if ( document.referrer.localeCompare("https://churyan.github.io/cg/") == 0 || document.referrer.localeCompare("https://churyan.github.io/2d/") == 0 ) {
+        $gamePlayer.reserveTransfer($dataSystem.startMapId,
+            61, $dataSystem.startY);
+    } else {
+        $gamePlayer.reserveTransfer($dataSystem.startMapId,
+            $dataSystem.startX, $dataSystem.startY);
+    }
     Graphics.frameCount = 0;
 };
 
